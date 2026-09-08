@@ -1,0 +1,5 @@
+/* OWNER: Dev 4 (Stylist + Glue)
+   Define the actual color values for light and dark mode, e.g.:
+   [data-theme='light'] { --bg-color: #fff; --text-color: #111; }
+   [data-theme='dark']  { --bg-color: #111; --text-color: #fff; }
+   Every component's CSS should use var(--bg-color) etc., not hardcoded colors. */
