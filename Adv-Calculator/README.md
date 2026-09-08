@@ -70,10 +70,13 @@ advanced-calculator/
 
 | Dev | Nickname | Owns |
 |---|---|---|
-| **Dev 1** | The Math Brain | `utils/calculate.js`, `utils/formatNumber.js`, `utils/constants.js`, `hooks/useCalculator.js` |
-| **Dev 2** | The Face | `components/Display/`, `components/Keypad/`, `components/Button/` |
-| **Dev 3** | The Memory | `context/HistoryContext.jsx`, `hooks/useHistory.js`, `components/History/` |
-| **Dev 4** | The Stylist + Glue | `context/ThemeContext.jsx`, `hooks/useTheme.js`, `components/ThemeToggle/`, `styles/`, `App.jsx`, `main.jsx` |
+| **Daniel** | The Math Brain | `utils/calculate.js`, `utils/formatNumber.js`, `utils/constants.js`, `hooks/useCalculator.js` |
+
+| **David** | The Face | `components/Display/`, `components/Keypad/`, `components/Button/` |
+
+| **Bolade** | The Memory | `context/HistoryContext.jsx`, `hooks/useHistory.js`, `components/History/` |
+
+| **James** | The Stylist + Glue | `context/ThemeContext.jsx`, `hooks/useTheme.js`, `components/ThemeToggle/`, `styles/`, `App.jsx`, `main.jsx` |
 
 **Rule of thumb:** only touch files inside your own section. If you need something from someone else's file, ask them instead of editing it yourself.
 
@@ -81,7 +84,7 @@ advanced-calculator/
 
 ## 🔌 Hook Contracts (what each hook must return)
 
-### `useCalculator()` — Dev 1
+### `useCalculator()` — Daniel
 | Returns | Type | Purpose |
 |---|---|---|
 | `displayValue` | string | Current number shown on screen |
@@ -94,7 +97,7 @@ advanced-calculator/
 | `handleClear()` | function | Called on `C` press |
 | `handleDelete()` | function | Called on backspace press |
 
-### `useHistory()` — Dev 3
+### `useHistory()` — Bolade
 | Returns | Type | Purpose |
 |---|---|---|
 | `history` | array | List of past calculations |
@@ -102,13 +105,13 @@ advanced-calculator/
 | `clearHistory()` | function | Empties the list |
 | `selectEntry(id)` | function | Loads a past result back into the calculator |
 
-### `useTheme()` — Dev 4
+### `useTheme()` — James
 | Returns | Type | Purpose |
 |---|---|---|
 | `theme` | `"light"` \| `"dark"` | Current theme |
 | `toggleTheme()` | function | Switches theme |
 
-> **Note on Dev 2:** Dev 2 doesn't own a hook — you're a *consumer*, not a builder, in this section. You'll import `useCalculator()` directly inside your `Keypad`/`Button` components and call its functions (`handleDigit`, `handleOperator`, `handleEquals`, etc.) on each button press. Nothing new to document here — just read Dev 1's contract above and wire your buttons to it.
+> **Note on David:** David doesn't own a hook — you're a *consumer*, not a builder, in this section. You'll import `useCalculator()` directly inside your `Keypad`/`Button` components and call its functions (`handleDigit`, `handleOperator`, `handleEquals`, etc.) on each button press. Nothing new to document here — just read Dev 1's contract above and wire your buttons to it.
 
 ---
 
@@ -127,10 +130,10 @@ The more people pushing directly to `main` at once, the more often this happens 
 ### How we avoid it: branches + Pull Requests (PRs)
 
 1. **Each person works on their own branch**, named after their part:
-   - `feature/calc-engine` (Dev 1)
-   - `feature/keypad-ui` (Dev 2)
-   - `feature/history` (Dev 3)
-   - `feature/theme-shell` (Dev 4)
+   - `feature/calc-engine` (Daniel)
+   - `feature/keypad-ui` (David)
+   - `feature/history` (Bolade)
+   - `feature/theme-shell` (James)
 
 2. A branch is basically your own private copy of the project to experiment in — nothing you do there affects `main` or anyone else, until you're ready.
 
