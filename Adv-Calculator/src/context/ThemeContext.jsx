@@ -1,4 +1,4 @@
-// OWNER: Dev 4 (Stylist + Glue)
+// OWNER: James (Stylist + Glue)
 //
 // Makes theme + toggleTheme available anywhere in the app.
 //

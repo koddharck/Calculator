@@ -1,4 +1,4 @@
-// OWNER: Dev 1 (Math Brain)
+// OWNER: Daniel (Math Brain)
 //
 // This is the CORE calculator engine. Dev 2 (Keypad/Display) will import and
 // use this hook — they should never write their own math or state logic.

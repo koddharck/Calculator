@@ -1,4 +1,4 @@
-// OWNER: Dev 3 (The Memory)
+// OWNER: Bolade (The Memory)
 //
 // Renders the list of past calculations using HistoryItem below.
 // Also renders the "Clear History" button.

@@ -1,4 +1,4 @@
-// OWNER: Dev 3 (The Memory)
+// OWNER: Bolade (The Memory)
 //
 // Makes the history list and its functions available anywhere in the app
 // without passing props down manually through every component.

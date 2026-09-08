@@ -1,4 +1,4 @@
-// OWNER: Dev 1 (Math Brain)
+// OWNER: Daniel (Math Brain)
 //
 // This file holds the PURE MATH functions for the calculator.
 // "Pure" means: no React, no UI, no state — just functions that take

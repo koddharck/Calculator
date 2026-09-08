@@ -1,4 +1,4 @@
-// OWNER: Dev 3 (The Memory)
+// OWNER: Bolade (The Memory)
 //
 // A single row in the history list, e.g. "12 + 8 = 20".
 // Clicking it should reuse that calculation's result.

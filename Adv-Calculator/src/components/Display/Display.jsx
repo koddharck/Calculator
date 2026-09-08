@@ -1,4 +1,4 @@
-// OWNER: Dev 2 (The Face)
+// OWNER: David (The Face)
 //
 // This component shows the current number/result on screen.
 // It should be "dumb" — it just displays whatever value it's given.

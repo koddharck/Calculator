@@ -1,4 +1,4 @@
-// OWNER: Dev 4 (Stylist + Glue)
+// OWNER: James (Stylist + Glue)
 //
 // The actual light/dark switch button the user clicks.
 //

@@ -1,4 +1,4 @@
-/* OWNER: Dev 4 (Stylist + Glue)
+/* OWNER: James (Stylist + Glue)
    Define shared CSS custom properties (spacing, font sizes, border radius, etc.)
    that EVERY component should use instead of hardcoded values.
    Everyone (Dev 2, Dev 3) should reference these variables in their component CSS. */

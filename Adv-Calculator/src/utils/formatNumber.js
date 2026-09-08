@@ -1,4 +1,4 @@
-// OWNER: Dev 1 (Math Brain)
+// OWNER: Daniel (Math Brain)
 //
 // This file formats numbers for DISPLAY only (it doesn't change the real value).
 //

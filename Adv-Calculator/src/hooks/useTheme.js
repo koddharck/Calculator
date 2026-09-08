@@ -1,4 +1,4 @@
-// OWNER: Dev 4 (Stylist + Glue)
+// OWNER: James (Stylist + Glue)
 //
 // Manages the light/dark theme and saves the user's preference (localStorage).
 //

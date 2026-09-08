@@ -1,4 +1,4 @@
-// OWNER: Dev 2 (The Face)
+// OWNER: David (The Face)
 //
 // One reusable button component used by the Keypad.
 // Should support different visual "variants" (e.g. number, operator, action)

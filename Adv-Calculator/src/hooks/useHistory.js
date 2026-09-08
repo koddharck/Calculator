@@ -1,4 +1,4 @@
-// OWNER: Dev 3 (The Memory)
+// OWNER: Bolade (The Memory)
 //
 // Manages the list of past calculations and saves them so they survive
 // a page refresh (use localStorage).

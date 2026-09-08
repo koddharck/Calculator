@@ -1,4 +1,4 @@
-// OWNER: Dev 1 (Math Brain)
+// OWNER: Daniel (Math Brain)
 //
 // Shared constants used across the app so nobody hardcodes "magic strings".
 //
