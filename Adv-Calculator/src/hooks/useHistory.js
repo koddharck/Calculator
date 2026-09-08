@@ -15,3 +15,4 @@
 // - read/write the history array to localStorage
 // - addEntry() should be called right after Dev 1's handleEquals() produces a result
 //   (this wiring happens in App.jsx, owned by Dev 4 — you just expose addEntry)
+fuction useHistory() {}
