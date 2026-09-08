@@ -6,3 +6,12 @@
 // - OPERATORS = { ADD: "+", SUBTRACT: "-", MULTIPLY: "×", DIVIDE: "÷" }
 // - MAX_DIGITS = (decide a sensible limit, e.g. 12)
 // - BUTTON_LABELS (if Dev 2 wants a shared list to render the keypad from)
+import React from 'react'
+
+const constants = () => {
+  return (
+    <div>constants</div>
+  )
+}
+
+export default constants

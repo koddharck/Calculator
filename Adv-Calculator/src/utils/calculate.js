@@ -11,3 +11,12 @@
 // - divide(a, b)        -> must handle divide-by-zero safely (return an "Error" state, not Infinity)
 // - percentage(value, base) -> decide: simple (value / 100) or context-aware (base * value / 100)
 // - a main "calculate(a, b, operator)" function that picks the right operation above
+import React from 'react'
+
+const calculate = () => {
+  return (
+    <div>calculate</div>
+  )
+}
+
+export default calculate
