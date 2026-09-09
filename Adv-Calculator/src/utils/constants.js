@@ -1,17 +1,18 @@
-// OWNER: Daniel (Math Brain)
-//
-// Shared constants used across the app so nobody hardcodes "magic strings".
-//
-// TODO:
-// - OPERATORS = { ADD: "+", SUBTRACT: "-", MULTIPLY: "×", DIVIDE: "÷" }
-// - MAX_DIGITS = (decide a sensible limit, e.g. 12)
-// - BUTTON_LABELS (if Dev 2 wants a shared list to render the keypad from)
-import React from 'react'
-
-const constants = () => {
-  return (
-    <div>constants</div>
-  )
+export const OPERATORS = {
+  ADD: '+',
+  SUBTRACT: '-',
+  MULTIPLY: '×',
+  DIVIDE: '÷',
 }
 
-export default constants
+export const MAX_DIGITS = 12
+
+export const BUTTON_LABELS = [
+  'C', '+/-', '%', '÷',
+  '7', '8', '9', '×',
+  '4', '5', '6', '-',
+  '1', '2', '3', '+',
+  '0', '.', '=',
+]
+
+export default { OPERATORS, MAX_DIGITS, BUTTON_LABELS }
