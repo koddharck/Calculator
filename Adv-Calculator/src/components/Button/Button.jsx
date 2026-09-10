@@ -1,9 +1,12 @@
-// OWNER: David (The Face)
-//
-// One reusable button component used by the Keypad.
-// Should support different visual "variants" (e.g. number, operator, action)
-// via a prop, so operators/equals/clear can be styled differently.
-//
-// TODO:
-// - accept props: label, onClick, variant ("number" | "operator" | "action")
-// - render <button> with the right className based on variant
+import styles from "./Button.module.css";
+
+export default function Button({ label, onClick, variant = "number" }) {
+  return (
+    <button
+      className={`${styles.button} ${styles[variant]}`}
+      onClick={() => onClick(label)}
+    >
+      {label}
+    </button>
+  );
+}
