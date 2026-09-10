@@ -1,9 +1,14 @@
-// OWNER: Bolade (The Memory)
-//
-// Makes the history list and its functions available anywhere in the app
-// without passing props down manually through every component.
-//
-// TODO:
-// - create HistoryContext with React.createContext()
-// - create a HistoryProvider that uses useHistory() internally and
-//   passes { history, addEntry, clearHistory, selectEntry } down via context
+import { createContext } from 'react'
+import { useHistory } from '../hooks/useHistory'
+
+export const HistoryContext = createContext(null)
+
+export function HistoryProvider({ children }) {
+       const { history, addEntry, clearHistory, selectEntry } = useHistory()
+
+       return (
+	       <HistoryContext.Provider value={{ history, addEntry, clearHistory, selectEntry }}>
+		       {children}
+	       </HistoryContext.Provider>
+       )
+}

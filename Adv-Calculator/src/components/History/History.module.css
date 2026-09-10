@@ -1,3 +1,131 @@
-/* OWNER: Bolade (The Memory)
-   Style the history list/panel here. Use theme variables so it
-   respects light/dark mode automatically. */
+.panel {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   min-width: 0;
+   max-height: 32rem;
+   overflow: hidden;
+   color: var(--text-color, var(--text-h));
+   background: var(--surface-color, var(--bg-color));
+   border: 1px solid var(--border);
+   border-radius: 8px;
+   box-shadow: var(--shadow);
+}
+
+.header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1rem;
+   padding: 1rem 1.125rem;
+   border-bottom: 1px solid var(--border);
+}
+
+.title {
+   margin: 0;
+   color: var(--text-color, var(--text-h));
+   font-size: 1rem;
+   font-weight: 700;
+}
+
+.clearButton {
+   flex: 0 0 auto;
+   padding: 0.4rem 0.65rem;
+   color: var(--accent);
+   font: inherit;
+   font-size: 0.8rem;
+   font-weight: 600;
+   background: transparent;
+   border: 1px solid transparent;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.clearButton:hover {
+   background: var(--accent-bg);
+   border-color: var(--accent-border, var(--accent));
+}
+
+.clearButton:focus-visible,
+.item:focus-visible {
+   outline: 2px solid var(--accent);
+   outline-offset: 2px;
+}
+
+.list {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   min-height: 0;
+   margin: 0;
+   padding: 0.75rem;
+   overflow-y: auto;
+   list-style: none;
+}
+
+.item {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1rem;
+   width: 100%;
+   padding: 0.75rem 0.875rem;
+   color: inherit;
+   text-align: left;
+   background: var(--accent-bg);
+   border: 1px solid transparent;
+   border-radius: 6px;
+   cursor: pointer;
+   transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.item:hover {
+   border-color: var(--accent-border, var(--accent));
+   transform: translateY(-1px);
+}
+
+.expression {
+   min-width: 0;
+   overflow: hidden;
+   color: var(--text-color, var(--text-h));
+   font-size: 0.9rem;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.result {
+   flex: 0 0 auto;
+   color: var(--accent);
+   font-weight: 700;
+   white-space: nowrap;
+}
+
+.empty {
+   margin: 0;
+   padding: 2rem 1rem;
+   color: var(--text-color, var(--text-h));
+   opacity: 0.65;
+   text-align: center;
+   font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+   .header {
+      padding: 0.875rem 1rem;
+   }
+
+   .list {
+      padding: 0.625rem;
+   }
+
+   .item {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.25rem;
+   }
+
+   .result {
+      font-size: 0.95rem;
+   }
+}
