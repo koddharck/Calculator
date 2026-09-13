@@ -1,8 +1,16 @@
-// OWNER: Bolade (The Memory)
-//
-// A single row in the history list, e.g. "12 + 8 = 20".
-// Clicking it should reuse that calculation's result.
-//
-// TODO:
-// - display entry.expression and entry.result
-// - onClick -> call selectEntry(entry.id) so the calculator can load the result back in
+import styles from './History.module.css'
+
+export default function HistoryItem({ entry, selectEntry }) {
+       function handleSelect() {
+	       selectEntry(entry.id)
+       }
+
+       return (
+	       <li>
+		       <button className={styles.item} type="button" onClick={handleSelect}>
+			       <span className={styles.expression}>{entry.expression}</span>
+			       <span className={styles.result}>= {entry.result}</span>
+		       </button>
+	       </li>
+       )
+}
