@@ -1,7 +1,13 @@
-// OWNER: James (Stylist + Glue)
-//
-// The actual light/dark switch button the user clicks.
-//
-// TODO:
-// - read theme + toggleTheme from ThemeContext
-// - render a switch/button showing current mode, onClick calls toggleTheme()
+
+import styles from "./ThemeToggle.module.css";
+import { useThemeContext } from "../../context/ThemeContext";
+
+export default function ThemeToggle() {
+  const { theme, toggleTheme } = useThemeContext();
+
+  return (
+    <button className={styles.toggle} onClick={toggleTheme}>
+      {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+    </button>
+  );
+}
