@@ -10,6 +10,14 @@
   --button-action-bg: #a5a5a5;
   --button-action-color: #000000;
   --text-color: #ffffff;
+
+  --bg-color: #0d0d0d;
+  --surface-color: #1c1c1c;
+  --border: #333333;
+  --accent: #ff9f0a;
+  --accent-bg: rgba(255, 159, 10, 0.15);
+  --accent-border: rgba(255, 159, 10, 0.5);
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 }
 
 [data-theme="light"] {
@@ -24,4 +32,12 @@
   --button-action-bg: #d4d4d2;
   --button-action-color: #000000;
   --text-color: #000000;
+
+  --bg-color: #f2f2f2;
+  --surface-color: #ffffff;
+  --border: #e0e0e0;
+  --accent: #ff9f0a;
+  --accent-bg: rgba(255, 159, 10, 0.1);
+  --accent-border: rgba(255, 159, 10, 0.5);
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
