@@ -1,2 +1,10 @@
-/* OWNER: James (Stylist + Glue)
-   Style the toggle switch itself here. */
+.toggle {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: var(--button-action-bg);
+  color: var(--button-action-color);
+  margin-bottom: 1rem;
+}

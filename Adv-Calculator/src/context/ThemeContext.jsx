@@ -1,8 +1,13 @@
-// OWNER: James (Stylist + Glue)
-//
-// Makes theme + toggleTheme available anywhere in the app.
-//
-// TODO:
-// - create ThemeContext with React.createContext()
-// - create a ThemeProvider that uses useTheme() internally and
-//   passes { theme, toggleTheme } down via context
+import { createContext, useContext } from "react";
+import useTheme from "../hooks/useTheme";
+
+const ThemeContext = createContext(null);
+
+export function ThemeProvider({ children }) {
+  const value = useTheme();
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+}
+
+export function useThemeContext() {
+  return useContext(ThemeContext);
+}
