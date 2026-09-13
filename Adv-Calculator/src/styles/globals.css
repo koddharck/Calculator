@@ -1,2 +1,12 @@
-/* OWNER: James (Stylist + Glue)
-   Basic resets (margin/padding/box-sizing) and base typography for the whole app. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--page-bg);
+  color: var(--text-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

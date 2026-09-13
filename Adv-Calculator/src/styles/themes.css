@@ -1,5 +1,27 @@
-/* OWNER: James (Stylist + Glue)
-   Define the actual color values for light and dark mode, e.g.:
-   [data-theme='light'] { --bg-color: #fff; --text-color: #111; }
-   [data-theme='dark']  { --bg-color: #111; --text-color: #fff; }
-   Every component's CSS should use var(--bg-color) etc., not hardcoded colors. */
+[data-theme="dark"] {
+  --page-bg: #0d0d0d;
+  --calculator-bg: #000000;
+  --display-bg: #1c1c1c;
+  --display-color: #ffffff;
+  --button-number-bg: #2b2b2b;
+  --button-number-color: #ffffff;
+  --button-operator-bg: #ff9f0a;
+  --button-operator-color: #ffffff;
+  --button-action-bg: #a5a5a5;
+  --button-action-color: #000000;
+  --text-color: #ffffff;
+}
+
+[data-theme="light"] {
+  --page-bg: #f2f2f2;
+  --calculator-bg: #ffffff;
+  --display-bg: #e8e8e8;
+  --display-color: #000000;
+  --button-number-bg: #e0e0e0;
+  --button-number-color: #000000;
+  --button-operator-bg: #ff9f0a;
+  --button-operator-color: #ffffff;
+  --button-action-bg: #d4d4d2;
+  --button-action-color: #000000;
+  --text-color: #000000;
+}

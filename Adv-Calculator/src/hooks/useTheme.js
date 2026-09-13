@@ -1,15 +1,22 @@
-// OWNER: James (Stylist + Glue)
-//
-// Manages the light/dark theme and saves the user's preference (localStorage).
-//
-// MUST RETURN (this is the contract — see README.md):
-// {
-//   theme,         // "light" | "dark"
-//   toggleTheme,   // () => void
-// }
-//
-// TODO:
-// - store the current theme in state, default to "light" (or read saved preference)
-// - toggleTheme() should flip the value and save it to localStorage
-// - apply the theme by setting a data-theme attribute on the <html> or root element,
-//   so styles/themes.css can react to it automatically
+
+import { useState, useEffect } from "react";
+
+function getInitialTheme() {
+  const saved = localStorage.getItem("calculator-theme");
+  return saved || "dark";
+}
+
+export default function useTheme() {
+  const [theme, setTheme] = useState(getInitialTheme);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("calculator-theme", theme);
+  }, [theme]);
+
+  function toggleTheme() {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  }
+
+  return { theme, toggleTheme };
+}
