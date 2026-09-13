@@ -1,4 +1,20 @@
-/* OWNER: David (The Face)
-   Style the calculator screen here.
-   Use variables from src/styles/variables.css for colors (don't hardcode hex codes)
-   so light/dark theme switching (Dev 4) works automatically. */
+.display {
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1rem 1.25rem;
+  background-color: var(--display-bg, #1c1c1c);
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.value {
+  font-size: clamp(1.8rem, 8vw, 2.8rem);
+  color: var(--display-color, #fff);
+  white-space: nowrap;
+  overflow-x: auto;
+  max-width:100%;
+}

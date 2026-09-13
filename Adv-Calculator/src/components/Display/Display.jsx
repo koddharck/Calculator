@@ -1,9 +1,9 @@
-// OWNER: David (The Face)
-//
-// This component shows the current number/result on screen.
-// It should be "dumb" — it just displays whatever value it's given.
-// Get displayValue from Dev 1's useCalculator() hook and pass it in as a prop.
-//
-// TODO:
-// - render the displayValue text, right-aligned like a real calculator screen
-// - handle long numbers gracefully (shrink font size or scroll, don't overflow)
+import styles from "./Display.module.css";
+
+export default function Display({ value }) {
+    return (
+        <div className={styles.display}>
+            <span className={styles.value}>{value}</span>
+        </div>
+    );
+}

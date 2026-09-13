@@ -1,8 +1,15 @@
-// OWNER: David (The Face) — main layout, built alongside Display + Keypad
-//
-// This is the overall calculator "shell" that arranges Display + Keypad
-// (and later, History, wired in by James in App.jsx).
-//
-// TODO:
-// - render <Display /> above <Keypad />
-// - keep this component focused on LAYOUT only
+import styles from "./Calculator.module.css";
+import Display from "../Display/Display";
+import Keypad from "../Keypad/Keypad";
+import useCalculator from "../../hooks/dev2-testing/useCalculator.mock";
+
+export default function Calculator() {
+  const calculator = useCalculator();
+
+  return (
+    <div className={styles.calculator}>
+      <Display value={calculator.displayValue} />
+      <Keypad calculator={calculator} />
+    </div>
+  );
+}

@@ -1,3 +1,28 @@
-/* OWNER: David (The Face)
-   Style each button variant (number / operator / action) here.
-   Use theme variables so buttons restyle correctly in light/dark mode. */
+.button {
+  border: none;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 1rem;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+.number {
+  background-color: var(--button-number-bg, #2b2b2b);
+  color: var(--button-number-color, #fff);
+}
+
+.operator {
+  background-color: var(--button-operator-bg, #ff9f0a);
+  color: var(--button-operator-color, #fff);
+}
+
+.action {
+  background-color: var(--button-action-bg, #a5a5a5);
+  color: var(--button-action-color, #000);
+}
