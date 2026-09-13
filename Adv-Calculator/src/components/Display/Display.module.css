@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 90px;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
   padding: 1rem 1.25rem;
@@ -11,10 +12,17 @@
   box-sizing: border-box;
 }
 
+.expression {
+  font-size: 1rem;
+  color: var(--display-color, #fff);
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
 .value {
   font-size: clamp(1.8rem, 8vw, 2.8rem);
   color: var(--display-color, #fff);
   white-space: nowrap;
   overflow-x: auto;
-  max-width:100%;
+  max-width: 100%;
 }
