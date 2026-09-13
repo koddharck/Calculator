@@ -82,12 +82,14 @@ advanced-calculator/
 
 ---
 
-## 🔌 Hook Contracts (what each hook must return)
+## 🔌 Hook Contracts (what each hook actually returns)
 
 ### `useCalculator()` — Daniel
 | Returns | Type | Purpose |
 |---|---|---|
 | `displayValue` | string | Current number shown on screen |
+| `operator` | string \| null | The operator waiting to be applied (e.g. `"+"`), or `null` if none pending |
+| `previousValue` | number \| null | The stored left-hand number in an in-progress calculation |
 | `handleDigit(digit)` | function | Called on number button press |
 | `handleDecimal()` | function | Called on `.` press |
 | `handleOperator(op)` | function | Called on `+ − × ÷` press |
@@ -96,6 +98,8 @@ advanced-calculator/
 | `handleEquals()` | function → `{ expression, result, timestamp }` | Called on `=` press |
 | `handleClear()` | function | Called on `C` press |
 | `handleDelete()` | function | Called on backspace press |
+| `loadValue(value)` | function | Loads a value straight into the display — used when reusing a past calculation from History |
+
 
 ### `useHistory()` — Bolade
 | Returns | Type | Purpose |
@@ -103,7 +107,8 @@ advanced-calculator/
 | `history` | array | List of past calculations |
 | `addEntry(expression, result)` | function | Saves a new entry |
 | `clearHistory()` | function | Empties the list |
-| `selectEntry(id)` | function | Loads a past result back into the calculator |
+| `selectEntry(id)` | function → the stored result | Looks up a past entry's result and returns it — does NOT load it into the calculator itself (see note below) |
+
 
 ### `useTheme()` — James
 | Returns | Type | Purpose |
@@ -111,7 +116,19 @@ advanced-calculator/
 | `theme` | `"light"` \| `"dark"` | Current theme |
 | `toggleTheme()` | function | Switches theme |
 
-> **Note on David:** David doesn't own a hook — you're a *consumer*, not a builder, in this section. You'll import `useCalculator()` directly inside your `Keypad`/`Button` components and call its functions (`handleDigit`, `handleOperator`, `handleEquals`, etc.) on each button press. Nothing new to document here — just read Dev 1's contract above and wire your buttons to it.
+---
+
+## How it's all wired together (App.jsx)
+
+`useCalculator()` is called **once, in `App.jsx`**, not inside the Keypad. This is because History needs to read and update the same calculator state that the Keypad does — if each component called the hook separately, they'd each get their own disconnected copy of the state.
+
+
+### Note on David
+David doesn't own a hook — he's a *consumer*. His `Keypad`/`Button` components receive the `calculator` object as a **prop** (passed down from `App.jsx`), rather than importing and calling `useCalculator()` directly as originally planned. This changed once History needed to share state with the calculator — see above.
+
+### Why `selectEntry` doesn't fully "load" on its own
+The original contract said `selectEntry(id)` should "load a past result back into the calculator" — but a hook can only manage its own state, not reach into a different hook. So `selectEntry` does the one thing it realistically can: look up and return the result. Actually loading it into the display needed a bridge — that's `loadValue()` (Daniel's addition) plus the wiring in `App.jsx` that connects the two.
+
 
 ---
 
