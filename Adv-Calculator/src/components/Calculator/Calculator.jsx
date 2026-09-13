@@ -22,7 +22,11 @@ export default function Calculator() {
 
   return (
     <div className={styles.calculator}>
-      <Display value={calculator.displayValue} />
+      <Display
+        value={calculator.displayValue}
+        operator={calculator.operator}
+        previousValue={calculator.previousValue}
+      />
       <Keypad calculator={calculatorWithHistory} />
     </div>
   );
