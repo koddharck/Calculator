@@ -114,8 +114,17 @@ function useCalculator() {
 		setDisplayValue(displayValue.length > 1 ? displayValue.slice(0, -1) : '0')
 	}
 
+	const loadValue = (value) => {
+		setDisplayValue(String(value))
+		setPreviousValue(null)
+		setOperator(null)
+		setOverwrite(true)
+	}
+
 	return {
 		displayValue,
+		operator,
+		previousValue,
 		handleDigit,
 		handleDecimal,
 		handleOperator,
@@ -124,6 +133,7 @@ function useCalculator() {
 		handleEquals,
 		handleClear,
 		handleDelete,
+		loadValue,
 	}
 }
 
